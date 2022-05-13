@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { image, imageWrapper } from "variants";
 import { useState, useEffect } from "react";
-import Card from "./Card";
+// import Card from "./Card";
 import image2 from "./images/image2.jpg"
 import {
   Tooltip,
