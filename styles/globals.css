@@ -103,3 +103,7 @@ input[type="text"]:not(:placeholder-shown) ~ .input-text{
     @apply object-contain w-20 h-28;
   }
 }
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50 opacity-100 scale-110 duration-300 -translate-y-1;
+}

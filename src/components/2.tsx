@@ -2,12 +2,14 @@ import { motion } from "framer-motion";
 import { image, imageWrapper } from "variants";
 import { useState, useEffect } from "react";
 // import Card from "./Card";
-import image2 from "./images/image2.jpg"
-import {
-  Tooltip,
-} from 'react-tippy';
-
-import 'react-tippy/dist/tippy.css';
+// import image2 from "./images/image2.jpg"
+// import { Tooltip } from 'react-tippy';
+// import 'react-tippy/dist/tippy.css';
+// import tippy from 'tippy.js';
+// import Tippy from "@tippy.js/react";
+// import 'tippy.js/dist/tippy.css'
+// import Tooltip from "./Tooltip";
+// import Popover from "./Popover";
 
 
 export default function Second() {
@@ -120,20 +122,25 @@ export default function Second() {
               <motion.img  src="/images/image2.jpg" className="image"  variants={image}  />
             </motion.div>
           </div>
-            <Tooltip 
-              title=" मैं तो बस निमित्त मात्र हूँ "
-              position="top"
-              trigger="mouseenter"
-              arrow="true"
-              arrowSize="regular"
-              animation="shift"
-              duration="1000" 
-              >
-              <div className="flex flex-col items-center justify-center">
-                <img className="inline-block h-40 w-40 mb-5 rounded-full ring-2 ring-offset-base-100 ring-offset-2 ring-white" src="/images/end.jpg" />
+            
+         
+                <div className="flex flex-col items-center justify-center">
+                
+                <div className='has-tooltip p-3 '>  
+                  <span className='tooltip transition ease-in-out delay-150 rounded-xl shadow-lg p-1.5 bg-gray-100 text-[#1a4645] mb-10 opacity-0 '> <strong>  मैं तो बस निमित्त मात्र हूँ</strong></span>
+                  </div>
+                  <img className="inline-block h-40 w-40 mb-5 rounded-full ring-2 ring-offset-base-100 ring-offset-2 ring-white" src="/images/end.jpg" />
+                  
+                
               </div>
-            </Tooltip>
           
         </section>
       );
     }
+     // title=" मैं तो बस निमित्त मात्र हूँ "
+            // position="top"
+            // trigger="mouseenter"
+            // arrow={true}
+            // arrowSize="regular"
+            // animation="shift"
+            // duration={1000} 
