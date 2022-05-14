@@ -17,7 +17,7 @@ export default function Second() {
 
     const [chapter, setChapter] = useState("Please Select Chapter")
     
-    //const [data, setData] = useState([{}])
+    const [data, setData] = useState([{}])
 
     const [verse, setVerse] = useState("")
     
