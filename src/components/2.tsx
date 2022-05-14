@@ -22,7 +22,7 @@ export default function Second() {
     
     const [api, setApi] = useState([])
 
-
+    // shows how many verse present in the chapter 
     useEffect(() => {
         getData()
         async function getData(){
@@ -35,8 +35,8 @@ export default function Second() {
             }
           })
           const getResult = await result.json();
-          setData(getResult);
-          console.log(getResult)
+          setData(getResult)
+          //console.log(getResult)
         }
       }, [chapter])
 
@@ -52,8 +52,9 @@ export default function Second() {
             }
           })
           const getResult2 = await result.json();
-          setApi(getResult2);
-          console.log(getResult2)
+          //setApi(getResult2);
+          //console.log(getResult2.text)
+        setApi(getResult2.text)
           
         }
       }, [verse])
@@ -116,7 +117,7 @@ export default function Second() {
               </div>
             </div>
               <div>
-                {/* {api} */}
+                {api ? <h2> {api} </h2> : ""}
               </div>
             <motion.div className="imageWrapper" variants={imageWrapper} initial="initial" animate="animate" >
               <motion.img  src="/images/image2.jpg" className="image"  variants={image}  />
