@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { image, imageWrapper } from "variants";
 import { useState, useEffect } from "react";
 import { getSortedRoutes } from "next/dist/shared/lib/router/utils";
+import { Loader } from 'rsuite';
 // import Card from "./Card";
 // import image2 from "./images/image2.jpg"
 // import { Tooltip } from 'react-tippy';
@@ -23,10 +24,13 @@ export default function Second() {
     
     const [api, setApi] = useState([])
 
-    const [translation, setTranslation] = useState("")
+    const [slug, setSlug] = useState([])
 
-    const [length , setLength ] = useState("");
+    const [translation, setTranslation] = useState("") 
 
+    const [isloading, setIsloading] = useState(false)
+
+    const [loading, setLoading] = useState(false)
    
 // shows how many verse present in the chapter 
     useEffect(() => {
@@ -42,10 +46,9 @@ export default function Second() {
           })
           const getResult = await result.json();
           setData(getResult)
-          setLength(getResult.length)
           //console.log(getResult)
         }
-      }, [chapter,length])
+      }, [chapter])
 
       useEffect(() => {
         getApi()
@@ -59,18 +62,18 @@ export default function Second() {
             }
           })
           const getResult2 = await result.json();
+          setIsloading(true)
          
-          
+        console.log(getResult2)
         setApi(getResult2.text)
+        setSlug(getResult2.slug)
         getResult2.translations ? setTranslation(getResult2.translations[0].description) : '';
         
         
         }
-      }, [chapter,verse,translation])
+      }, [chapter,verse])
 
-
-      // const tt = Object.keys(translation)
-
+      const length = data.length;
       
       return (
   
@@ -84,7 +87,6 @@ export default function Second() {
               <div className="flex justify-center">
                 <div className="">
                     <select 
-
                      value={chapter}
                      onChange={(event) => {
                          setChapter(event.target.value)
@@ -123,21 +125,18 @@ export default function Second() {
                     <span className='text-xl text-white text-opacity-80 bg-[#f8bc24] absolute left-5 top-1.5 px-1 transition duration-200 input-text'>Input</span>
                   </label>
                 </div>
-                { chapter === "Please Select Chapter" ? "" : <h1>there are  {length} verses in chapter {chapter}</h1>}
               </div>
+              { chapter === "Please Select Chapter" ? "" : <h1>there are  {length} verses in chapter {chapter}</h1>}
             </div>
-              <div>
-              {api ? <h2> {api} </h2> : ""}
-              </div>
-              <div>
-              <h1> {translation}</h1>
-              {/* {translation ? <h2> {translation} </h2> : ""} */}
-              </div>
-                         <motion.div className="imageWrapper" variants={imageWrapper} initial="initial" animate="animate" >
+              <motion.div className="imageWrapper" variants={imageWrapper} initial="initial" animate="animate" >
               <motion.img  src="/images/image2.jpg" className="image"  variants={image}  />
             </motion.div>
           </div>
-            
+              <div>
+                {slug ? <h1> {slug} </h1> : ""}
+                {api ? <h2> {api} </h2> : ""}
+                {isloading ? translation : <Loader content="Loading..."  />}              
+              </div>  
          
                 <div className="flex flex-col items-center justify-center">
                 

@@ -75,7 +75,7 @@ input[type="text"]:not(:placeholder-shown) ~ .input-text{
     @apply absolute top-0 left-0 grid w-full text-center place-items-center;
   }
   .krishna {
-    @apply h-[400px] w-[250px] md:h-[550px] md:w-[500px] object-contain;
+    @apply h-[500px] w-[250px] md:h-[550px] md:w-[500px] object-contain;
   }
   .imageWrapper{
     @apply lg:max-w-lg lg:w-full md:w-1/2 w-5/6;
@@ -107,3 +107,4 @@ input[type="text"]:not(:placeholder-shown) ~ .input-text{
 .has-tooltip:hover .tooltip {
   @apply visible z-50 opacity-100 scale-110 duration-300 -translate-y-1;
 }
+
