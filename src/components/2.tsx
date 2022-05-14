@@ -17,13 +17,16 @@ export default function Second() {
 
     const [chapter, setChapter] = useState("Please Select Chapter")
     
-    const [data, setData] = useState([{}])
+    //const [data, setData] = useState([{}])
 
     const [verse, setVerse] = useState("")
     
     const [api, setApi] = useState([])
 
-    const [translation, setTranslation] = useState("") 
+    const [translation, setTranslation] = useState("")
+
+    const [length , setLength ] = useState("");
+
    
 // shows how many verse present in the chapter 
     useEffect(() => {
@@ -39,9 +42,10 @@ export default function Second() {
           })
           const getResult = await result.json();
           setData(getResult)
+          setLength(getResult.length)
           //console.log(getResult)
         }
-      }, [chapter])
+      }, [chapter,length])
 
       useEffect(() => {
         getApi()
@@ -64,7 +68,6 @@ export default function Second() {
         }
       }, [chapter,verse,translation])
 
-      const length = data.length;
 
       // const tt = Object.keys(translation)
 
