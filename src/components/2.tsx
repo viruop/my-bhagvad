@@ -8,9 +8,10 @@ import { Loader } from 'rsuite';
 // import { Tooltip } from 'react-tippy';
 // import 'react-tippy/dist/tippy.css';
 // import tippy from 'tippy.js';
-// import Tippy from "@tippy.js/react";
+// import Tippy from "tippy.js";
 // import 'tippy.js/dist/tippy.css'
-// import Tooltip from "./Tooltip";
+// import Tooltip from "tippy.js";
+import ReactTooltip from "react-tooltip";
 // import Popover from "./Popover";
 
 
@@ -29,8 +30,6 @@ export default function Second() {
     const [translation, setTranslation] = useState("") 
 
     const [isloading, setIsloading] = useState(false)
-
-    const [loading, setLoading] = useState(false)
    
 // shows how many verse present in the chapter 
     useEffect(() => {
@@ -137,16 +136,16 @@ export default function Second() {
                 {api ? <h2> {api} </h2> : ""}
                 {isloading ? translation : <Loader content="Loading..."  />}              
               </div>  
-         
-                <div className="flex flex-col items-center justify-center">
-                
-                <div className='has-tooltip p-3 '>  
-                  <span className='tooltip transition ease-in-out delay-150 rounded-xl shadow-lg p-1.5 bg-gray-100 text-[#1a4645] mb-10 opacity-0 '> <strong>  मैं तो बस निमित्त मात्र हूँ</strong></span>
-                  </div>
-                  <img className="inline-block h-40 w-40 mb-5 rounded-full ring-2 ring-offset-base-100 ring-offset-2 ring-white" src="/images/end.jpg" />
+              <ReactTooltip 
+              id='custom-color' className='custom-color' place='top' border
+              textColor='#FDFCFB' backgroundColor='#266867' borderColor='darkgreen' arrowColor='#f8bc24'
+              > <strong> मैं तो बस निमित्त मात्र हूँ</strong></ReactTooltip>
+                <div className="flex flex-col items-center justify-center" data-for='custom-color' data-tip='That is one weird arrow (and a border)!' >
+                  <img  className="inline-block h-40 w-40 mb-5 rounded-full ring-2 ring-offset-base-100 ring-offset-2 ring-white" src="/images/end.jpg" />
                   
                 
               </div>
+              
           
         </section>
       );

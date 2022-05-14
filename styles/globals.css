@@ -29,15 +29,7 @@ input[type="text"]:not(:placeholder-shown) ~ .input-text{
   .header-logo {
     @apply font-black md:text-2xl;
   }
-  .header-account {
-    @apply hidden font-medium md:block;
-  }
-  .header-user {
-    @apply block md:hidden;
-  }
-  .header > ul {
-    @apply justify-center flex-1 hidden space-x-5 md:flex;
-  }
+  
 
   main {
     @apply relative h-[90vh];
@@ -61,13 +53,13 @@ input[type="text"]:not(:placeholder-shown) ~ .input-text{
     @apply flex items-center justify-between;
   }
   .textContainer-bottom > button {
-    @apply p-2 text-base tracking-wide text-white lowercase bg-[#051821] rounded-lg md:px-6 md:py-3 md:text-lg;
+    @apply p-2 text-base tracking-wide text-white lowercase bg-[#266867] rounded-lg md:px-6 md:py-3 md:text-lg;
   }
   .textContainer-bottom > p {
     @apply text-sm font-semibold md:text-2xl;
   }
   .textContainer-bottom > p > span {
-    @apply text-[#1a4645];
+    @apply text-[#266867];
   }
   /* #f58800 */
   /* krishna  :: */
@@ -103,8 +95,3 @@ input[type="text"]:not(:placeholder-shown) ~ .input-text{
     @apply object-contain w-20 h-28;
   }
 }
-
-.has-tooltip:hover .tooltip {
-  @apply visible z-50 opacity-100 scale-110 duration-300 -translate-y-1;
-}
-
