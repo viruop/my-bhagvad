@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { image, imageWrapper } from "variants";
 import { useState, useEffect } from "react";
+import { getSortedRoutes } from "next/dist/shared/lib/router/utils";
 // import Card from "./Card";
 // import image2 from "./images/image2.jpg"
 // import { Tooltip } from 'react-tippy';
@@ -22,7 +23,7 @@ export default function Second() {
     
     const [api, setApi] = useState([])
 
-    const [translation, setTranslation] = useState([]) 
+    const [translation, setTranslation] = useState("") 
    
 // shows how many verse present in the chapter 
     useEffect(() => {
@@ -55,13 +56,13 @@ export default function Second() {
           })
           const getResult2 = await result.json();
          
-          //setApi(getResult2);
-          console.log(getResult2)
+          
         setApi(getResult2.text)
-        setTranslation(getResult2.translations)
-        console.log(getResult2.translations)
+        getResult2.translations ? setTranslation(getResult2.translations[0].description) : '';
+        
+        
         }
-      }, [chapter] [verse])
+      }, [chapter,verse,translation])
 
       const length = data.length;
 
@@ -126,13 +127,10 @@ export default function Second() {
               {api ? <h2> {api} </h2> : ""}
               </div>
               <div>
-                {/* {tt} */}
+              <h1> {translation}</h1>
               {/* {translation ? <h2> {translation} </h2> : ""} */}
               </div>
-              {translation?.map((ip,id) => (
-                    <h1 key={id}>  descrip={ip.description}</h1>                
-                ))}
-            <motion.div className="imageWrapper" variants={imageWrapper} initial="initial" animate="animate" >
+                         <motion.div className="imageWrapper" variants={imageWrapper} initial="initial" animate="animate" >
               <motion.img  src="/images/image2.jpg" className="image"  variants={image}  />
             </motion.div>
           </div>
