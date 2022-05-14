@@ -22,7 +22,9 @@ export default function Second() {
     
     const [api, setApi] = useState([])
 
-    // shows how many verse present in the chapter 
+    const [translation, setTranslation] = useState([]) 
+   
+// shows how many verse present in the chapter 
     useEffect(() => {
         getData()
         async function getData(){
@@ -52,14 +54,18 @@ export default function Second() {
             }
           })
           const getResult2 = await result.json();
+         
           //setApi(getResult2);
-          //console.log(getResult2.text)
+          console.log(getResult2)
         setApi(getResult2.text)
-          
+        setTranslation(getResult2.translations)
+        console.log(getResult2.translations)
         }
-      }, [verse])
+      }, [chapter] [verse])
 
       const length = data.length;
+
+      // const tt = Object.keys(translation)
 
       
       return (
@@ -117,8 +123,15 @@ export default function Second() {
               </div>
             </div>
               <div>
-                {api ? <h2> {api} </h2> : ""}
+              {api ? <h2> {api} </h2> : ""}
               </div>
+              <div>
+                {/* {tt} */}
+              {/* {translation ? <h2> {translation} </h2> : ""} */}
+              </div>
+              {translation?.map((ip,id) => (
+                    <h1 key={id}>  descrip={ip.description}</h1>                
+                ))}
             <motion.div className="imageWrapper" variants={imageWrapper} initial="initial" animate="animate" >
               <motion.img  src="/images/image2.jpg" className="image"  variants={image}  />
             </motion.div>
