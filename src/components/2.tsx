@@ -80,10 +80,10 @@ export default function Second() {
         <section className="text-gray-600 body-font ">
           <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
             <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-              <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Before they sold out
-                <br className="hidden lg:inline-block" />readymade gluten
+              <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"> I am the beginning, middle, and  
+                <br className="hidden lg:inline-block" />end of creation
               </h1>
-              <p className="mb-8 leading-relaxed">Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.</p>
+              <p className="mb-8 leading-relaxed">Bhagavad Gita, also known as the Gita - "The Song of God" is a practical guide to one's life that guides one to re-organise their life, achieve inner peace and approach the Supreme (the Ultimate Reality). The Bhagavad Gita consists of 701 verses by Lord Krishna. It is the dialogues between Pandav Prince Arjuna and Lord Krishna during the Kurukshetra war also known as Mahabharata.</p>
               <div className="flex justify-center">
                 <div className="">
                     <select 
@@ -129,7 +129,7 @@ export default function Second() {
               { chapter === "Please Select Chapter" ? "" : <h1>there are  {length} verses in chapter {chapter}</h1>}
             </div>
               <motion.div className="imageWrapper" variants={imageWrapper} initial="initial" animate="animate" >
-              <motion.img  src="/images/image2.jpg" className="image"  variants={image}  />
+              <motion.img  src="/images/image2.png" className="image"  variants={image}  />
             </motion.div>
           </div>
               <div>
