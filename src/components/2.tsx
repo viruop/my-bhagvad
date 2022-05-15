@@ -1,35 +1,34 @@
 import { motion } from "framer-motion";
 import { image, imageWrapper } from "variants";
 import { useState, useEffect } from "react";
-import { getSortedRoutes } from "next/dist/shared/lib/router/utils";
+// import { getSortedRoutes } from "next/dist/shared/lib/router/utils";
 import { Loader } from 'rsuite';
-// import Card from "./Card";
-// import image2 from "./images/image2.jpg"
-// import { Tooltip } from 'react-tippy';
-// import 'react-tippy/dist/tippy.css';
-// import tippy from 'tippy.js';
-// import Tippy from "tippy.js";
-// import 'tippy.js/dist/tippy.css'
-// import Tooltip from "tippy.js";
 import ReactTooltip from "react-tooltip";
-// import Popover from "./Popover";
 
 
 export default function Second() {
-
+ // chapter update karne ke liye
     const [chapter, setChapter] = useState("Please Select Chapter")
-    
+   // frist api call to recieve chapter number 
     const [data, setData] = useState([{}])
-
+  // verse select karne ke liye
     const [verse, setVerse] = useState("")
-    
+    // second api call 
     const [api, setApi] = useState([])
-
+// to get chapter and verse number 
     const [slug, setSlug] = useState([])
-
+// to get english translation
     const [translation, setTranslation] = useState("") 
-
+// doesn't work :(
     const [isloading, setIsloading] = useState(false)
+// to disable input feild before selecting chapter
+    const [isDisabled, setIsDisabled] = useState(true);
+ 
+    // to disable input 
+
+    const handleClick = () => {
+      chapter === "Please Select Chapter"? isDisabled : setIsDisabled(!isDisabled)
+    };
    
 // shows how many verse present in the chapter 
     useEffect(() => {
@@ -90,6 +89,7 @@ export default function Second() {
                      onChange={(event) => {
                          setChapter(event.target.value)
                      }}
+                     onClick={handleClick}
 
                     className="inline-flex text-white bg-[#266867] border-0 py-2 px-6 focus:outline-none hover:bg-[#266867] rounded text-lg" >
                         <option value="Please Select Chapter">Choose Chapter</option>
@@ -120,8 +120,9 @@ export default function Second() {
                     onChange={(event) => {
                         setVerse(event.target.value)
                     }}
-                    type="text" placeholder="Input" className='h-15 w-56 px-6 text-2xl text-white bg-[#f8bc24] border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-[#266867] placeholder-gray-300 placeholder-opacity-0 transition duration-200' />
-                    <span className='text-xl text-white text-opacity-80 bg-[#f8bc24] absolute left-5 top-1.5 px-1 transition duration-200 input-text'>Input</span>
+                    disabled={isDisabled}
+                    type="text" placeholder="Verse" className='h-15 w-56 px-6 text-2xl text-white bg-[#f8bc24] border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-[#266867] placeholder-gray-300 placeholder-opacity-0 transition duration-200' />
+                    <span className='text-xl text-white text-opacity-80 bg-[#f8bc24] absolute left-5 top-1.5 px-1 transition duration-200 input-text'>Verse</span>
                   </label>
                 </div>
               </div>
@@ -150,10 +151,4 @@ export default function Second() {
         </section>
       );
     }
-     // title=" मैं तो बस निमित्त मात्र हूँ "
-            // position="top"
-            // trigger="mouseenter"
-            // arrow={true}
-            // arrowSize="regular"
-            // animation="shift"
-            // duration={1000} 
+     
