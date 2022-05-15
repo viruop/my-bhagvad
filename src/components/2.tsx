@@ -81,7 +81,7 @@ export default function Second() {
               <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"> I am the beginning, middle, and  
                 <br className="hidden lg:inline-block" />end of creation
               </h1>
-              <p className="mb-8 leading-relaxed">Bhagavad Gita, also known as the Gita - "The Song of God" is a practical guide to one's life that guides one to re-organise their life, achieve inner peace and approach the Supreme (the Ultimate Reality). The Bhagavad Gita consists of 701 verses by Lord Krishna. It is the dialogues between Pandav Prince Arjuna and Lord Krishna during the Kurukshetra war also known as Mahabharata.</p>
+              <p className="mb-8 leading-relaxed">Bhagavad Gita, also known as the Gita - &quot;The Song of God&quot; is a practical guide to one&apos;s life that guides one to re-organise their life, achieve inner peace and approach the Supreme (the Ultimate Reality). The Bhagavad Gita consists of 701 verses by Lord Krishna. It is the dialogues between Pandav Prince Arjuna and Lord Krishna during the Kurukshetra war also known as Mahabharata.</p>
               <div className="flex justify-center">
                 <div className="">
                     <select 
