@@ -132,7 +132,7 @@ export default function Second() {
               <motion.img  src="/images/image2.png" className="image"  variants={image}  />
             </motion.div>
           </div>
-              <div>
+              <div className="flex justify-center flex-col items-center  bg-white lg:w-full md:w-1/2  h-40 p-5 m-5 rounded-lg">
                 {slug ? <h1> {slug} </h1> : ""}
                 {api ? <h2> {api} </h2> : ""}
                 {isloading ? translation : <Loader content="Loading..."  />}              
