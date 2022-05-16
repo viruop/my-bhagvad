@@ -97,7 +97,7 @@ export default function Second() {
                          setChapter(event.target.value)
                      }}
                      onClick={handleClick}
-
+                     
                     className="inline-flex text-white bg-[#266867] border-0 py-2 px-6 focus:outline-none hover:bg-[#266867] rounded text-lg w-auto cursor-pointer" >
                         <option value="Please Select Chapter">Choose Chapter</option>
                         <option value="1">1</option>
@@ -128,7 +128,7 @@ export default function Second() {
                         setVerse(event.target.value)
                     }}
                     disabled={isDisabled}
-                    type="text" placeholder="Verse" className='h-15 w-56 px-6 text-2xl text-white bg-[#f8bc24] border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-[#266867] placeholder-gray-300 placeholder-opacity-0 transition duration-200' />
+                    type="text" placeholder="Verse" className=' cursor-pointer h-15 w-56 px-6 text-2xl text-white bg-[#f8bc24] border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-[#266867] placeholder-gray-300 placeholder-opacity-0 transition duration-200' />
                     <span className='text-xl text-white text-opacity-80 bg-[#f8bc24] absolute left-5 top-1.5 px-1 transition duration-200 input-text'>Verse</span>
                   </label>
                 </div>
