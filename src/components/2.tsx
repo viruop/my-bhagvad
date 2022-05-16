@@ -22,14 +22,16 @@ export default function Second() {
     // to get hindi translation
     const [hindi, setHindi] =  useState("")
 // doesn't work :(
-    const [isloading, setIsloading] = useState(true)
+    // const [isloading, setIsloading] = useState(true)
 // to disable input feild before selecting chapter
     const [isDisabled, setIsDisabled] = useState(true);
+    
  
     // to disable input 
 
     const handleClick = () => {
-      chapter === "Please Select Chapter"? isDisabled : setIsDisabled(!isDisabled)
+      chapter === "Please Select Chapter"? isDisabled :setIsDisabled(false)
+      chapter === "Please Select Chapter" && setIsDisabled(true)
     };
    
 // shows how many verse present in the chapter 
@@ -45,7 +47,7 @@ export default function Second() {
             }
           })
           const getResult = await result.json();
-          setIsloading(false)
+          // setIsloading(false)
           setData(getResult)
           //console.log(getResult)
           
@@ -64,7 +66,7 @@ export default function Second() {
             }
           })
           const getResult2 = await result.json();
-          // setIsloading(true)
+          
          
         console.log(getResult2)
         setApi(getResult2.text)
@@ -139,7 +141,7 @@ export default function Second() {
               </motion.div>
           </div>
               {translation?
-              <div className="flex justify-center flex-col lg:items-start drop-shadow-2xl bg-[#F7E9A1] w-auto  h-auto pr-5 pl-2 pt-5 pb-5 m-5 rounded-lg   ">
+              <div className="flex justify-center flex-col lg:items-start drop-shadow-2xl bg-[#F7E9A1] w-auto  h-auto pr-5 pl-4 pt-5 pb-5 ml-8 mb-8 mt-4 -mr-2 rounded-lg md:m-8  ">
                 {slug ? <h1 className="underline underline-offset-4 mb-2 "> {slug} </h1> : ""}
                 {api ? <h2 > {api} </h2> : ""}
                 {translation ? <p className="flex justify-start  text-left mt-2"> English translation <br /> {translation} </p>: ""}

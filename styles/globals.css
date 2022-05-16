@@ -72,10 +72,10 @@ input[type="text"]:not(:placeholder-shown) ~ .input-text{
   }
   /* image */
   .imageWrapper{
-    @apply  w-full lg:max-w-lg lg:w-full md:w-1/2 ;
+    @apply w-full lg:max-w-lg lg:w-full md:w-1/2 ;
   }
   .image{
-    @apply object-cover object-center rounded;
+    @apply ml-4 mb-2  mt-4 -mr-2 object-cover object-center rounded md:pr-8;
   }
   /* leaf & co. */
   .leafWrapper-1 {
