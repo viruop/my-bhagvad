@@ -82,7 +82,7 @@ export default function Second() {
       
       return (
   
-        <section className="text-gray-600 body-font ">
+        <section className="text-gray-600 body-font -mt-5 ">
           <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center ">
             <div className="pl-10 pr-2 sm:px-2 lg:flex-grow md:w-1/2 lg:pr-24 lg:pl-4 md:pr-16  flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
               <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"> I am the beginning, middle, and  
@@ -141,11 +141,11 @@ export default function Second() {
               </motion.div>
           </div>
               {translation?
-              <div className="flex justify-center flex-col lg:items-start drop-shadow-2xl bg-[#F7E9A1] w-auto  h-auto pr-5 pl-4 pt-5 pb-5 ml-8 mb-8 mt-4 -mr-2 rounded-lg md:m-8 hover:scale-102 ">
+              <div className="flex justify-center flex-col lg:items-start drop-shadow-2xl bg-[#f7e06f] w-auto  h-auto pr-5 pl-4 pt-5 pb-5 ml-8 mb-8 mt-4 -mr-2 rounded-lg md:m-8 ">
                 {slug ? <h1 className="underline underline-offset-4 mb-2 "> {slug} </h1> : ""}
                 {api ? <h2 > {api} </h2> : ""}
                 {translation ? <p className="flex justify-start  text-left mt-2"> English translation <br /> {translation} </p>: ""}
-                {hindi ? <p className="flex justify-start text-left  pr-17 mt-2"> Hindi translation <br /> {hindi} </p>: ""}              
+                {hindi ? <p className="flex justify-start text-left  pr-17 mt-2"> Hindi translation <br /> {hindi} </p>: ""}        
               </div>  :""
               }
               <ReactTooltip 
@@ -153,7 +153,7 @@ export default function Second() {
               textColor='#FDFCFB' backgroundColor='#266867' borderColor='darkgreen' arrowColor='#f8bc24'
               > <strong> मैं तो बस निमित्त मात्र हूँ</strong></ReactTooltip>
                 <div className="flex flex-col items-center justify-center"  >
-                  <img  className="inline-block h-40 w-40 mb-5 rounded-full ring-2 ring-offset-base-100 ring-offset-2 ring-white" src="/images/end.jpg" data-for='custom-color' data-tip='That is one weird arrow (and a border)!' />
+                  <img  className="inline-block h-40 w-40 mb-5 rounded-full ring-2 ring-offset-base-100 ring-offset-2 ring-white" src="/images/me.jpg" data-for='custom-color' data-tip='That is one weird arrow (and a border)!' />
                 </div>
         </section>
       );

@@ -39,19 +39,19 @@ input[type="text"]:not(:placeholder-shown) ~ .input-text{
   /* text container */
 
   .textContainer {
-    @apply flex flex-col h-full px-2 py-28 md:px-52;
+    @apply flex flex-col h-full pt-16 pl-4 pr-0 pb-14 md:px-52 -mr-2;
   }
   .textContainer-top {
     @apply flex items-center justify-between text-lg md:text-2xl;
   }
   .textContainer-middle {
-    @apply grid flex-1 place-items-center;
+    @apply -mb-5 grid flex-1 place-items-center;
   }
   .textContainer-middle > span {
-    @apply text-5xl font-black tracking-wider md:text-9xl;
+    @apply text-5xl font-black tracking-wider md:text-8xl -mt-8 ;
   }
   .textContainer-bottom {
-    @apply flex items-center justify-between;
+    @apply px-2 pt-0 flex items-center justify-between;
   }
   .textContainer-bottom > button {
     @apply p-2 text-base tracking-wide text-white lowercase bg-[#266867] rounded-lg md:px-6 md:py-3 md:text-lg;
@@ -65,10 +65,10 @@ input[type="text"]:not(:placeholder-shown) ~ .input-text{
   /* #f58800 */
   /* krishna  :: */
   .krishnaWrapper {
-    @apply absolute top-0 left-0 grid w-full text-center place-items-center;
+    @apply absolute top-0 left-0 grid w-full text-center place-items-center pl-4;
   }
   .krishna {
-    @apply h-[500px] w-[250px] md:h-[550px] md:w-[500px] object-contain;
+    @apply h-[600px] w-[240px] md:h-[550px] md:w-[500px] object-contain;
   }
   /* image */
   .imageWrapper{
