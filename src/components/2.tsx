@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { image, imageWrapper } from "variants";
 import { useState, useEffect } from "react";
 // import { getSortedRoutes } from "next/dist/shared/lib/router/utils";
-import { Loader } from 'rsuite';
+// import { Loader } from 'rsuite';
 import ReactTooltip from "react-tooltip";
 
 
@@ -19,8 +19,10 @@ export default function Second() {
     const [slug, setSlug] = useState([])
 // to get english translation
     const [translation, setTranslation] = useState("") 
+    // to get hindi translation
+    const [hindi, setHindi] =  useState("")
 // doesn't work :(
-    const [isloading, setIsloading] = useState(false)
+    const [isloading, setIsloading] = useState(true)
 // to disable input feild before selecting chapter
     const [isDisabled, setIsDisabled] = useState(true);
  
@@ -43,8 +45,10 @@ export default function Second() {
             }
           })
           const getResult = await result.json();
+          setIsloading(false)
           setData(getResult)
           //console.log(getResult)
+          
         }
       }, [chapter])
 
@@ -60,12 +64,13 @@ export default function Second() {
             }
           })
           const getResult2 = await result.json();
-          setIsloading(true)
+          // setIsloading(true)
          
         console.log(getResult2)
         setApi(getResult2.text)
         setSlug(getResult2.slug)
         getResult2.translations ? setTranslation(getResult2.translations[0].description) : '';
+        getResult2.translations ? setHindi(getResult2.translations[6].description) : '';
         
         
         }
@@ -76,10 +81,10 @@ export default function Second() {
       return (
   
         <section className="text-gray-600 body-font ">
-          <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-            <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+          <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center ">
+            <div className="pl-10 pr-2 sm:px-2 lg:flex-grow md:w-1/2 lg:pr-24 lg:pl-4 md:pr-16  flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
               <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"> I am the beginning, middle, and  
-                <br className="hidden lg:inline-block" />end of creation
+                <br className="hidden lg:inline-block" /> end of creation
               </h1>
               <p className="mb-8 leading-relaxed">Bhagavad Gita, also known as the Gita - &quot;The Song of God&quot; is a practical guide to one&apos;s life that guides one to re-organise their life, achieve inner peace and approach the Supreme (the Ultimate Reality). The Bhagavad Gita consists of 701 verses by Lord Krishna. It is the dialogues between Pandav Prince Arjuna and Lord Krishna during the Kurukshetra war also known as Mahabharata.</p>
               <div className="flex justify-center">
@@ -91,7 +96,7 @@ export default function Second() {
                      }}
                      onClick={handleClick}
 
-                    className="inline-flex text-white bg-[#266867] border-0 py-2 px-6 focus:outline-none hover:bg-[#266867] rounded text-lg" >
+                    className="inline-flex text-white bg-[#266867] border-0 py-2 px-6 focus:outline-none hover:bg-[#266867] rounded text-lg w-auto" >
                         <option value="Please Select Chapter">Choose Chapter</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -126,28 +131,28 @@ export default function Second() {
                   </label>
                 </div>
               </div>
-              { chapter === "Please Select Chapter" ? "" : <h1>there are  {length} verses in chapter {chapter}</h1>}
+              {/* { isloading ?"loading" : <h1>there are  {length} verses in chapter {chapter}</h1>} */}
+              { chapter === "Please Select Chapter" ? <h1> First Select Chapter , Then Verse/Shlok</h1> : <h1> there are  {length} verses in chapter {chapter}</h1>}
             </div>
               <motion.div className="imageWrapper" variants={imageWrapper} initial="initial" animate="animate" >
-              <motion.img  src="/images/image2.png" className="image"  variants={image}  />
-            </motion.div>
+                <motion.img  src="/images/image2.png" className="image"  variants={image}  />
+              </motion.div>
           </div>
-              <div className="flex justify-center flex-col items-center  bg-white lg:w-full md:w-1/2  h-40 p-5 m-5 rounded-lg">
-                {slug ? <h1> {slug} </h1> : ""}
-                {api ? <h2> {api} </h2> : ""}
-                {isloading ? <p> English translation : <br /> {translation} </p>: <Loader content="Loading..."  />}              
-              </div>  
+              {translation?
+              <div className="flex justify-center flex-col lg:items-start drop-shadow-2xl bg-[#F7E9A1] w-auto  h-auto pr-5 pl-2 pt-5 pb-5 m-5 rounded-lg   ">
+                {slug ? <h1 className="underline underline-offset-4 mb-2 "> {slug} </h1> : ""}
+                {api ? <h2 > {api} </h2> : ""}
+                {translation ? <p className="flex justify-start  text-left mt-2"> English translation <br /> {translation} </p>: ""}
+                {hindi ? <p className="flex justify-start text-left  pr-17 mt-2"> Hindi translation <br /> {hindi} </p>: ""}              
+              </div>  :""
+              }
               <ReactTooltip 
               id='custom-color' className='custom-color' place='top' border
               textColor='#FDFCFB' backgroundColor='#266867' borderColor='darkgreen' arrowColor='#f8bc24'
               > <strong> मैं तो बस निमित्त मात्र हूँ</strong></ReactTooltip>
-                <div className="flex flex-col items-center justify-center" data-for='custom-color' data-tip='That is one weird arrow (and a border)!' >
-                  <img  className="inline-block h-40 w-40 mb-5 rounded-full ring-2 ring-offset-base-100 ring-offset-2 ring-white" src="/images/end.jpg" />
-                  
-                
-              </div>
-              
-          
+                <div className="flex flex-col items-center justify-center"  >
+                  <img  className="inline-block h-40 w-40 mb-5 rounded-full ring-2 ring-offset-base-100 ring-offset-2 ring-white" src="/images/end.jpg" data-for='custom-color' data-tip='That is one weird arrow (and a border)!' />
+                </div>
         </section>
       );
     }
