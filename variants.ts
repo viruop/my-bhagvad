@@ -95,10 +95,10 @@ export const leavesContainer: Variants = {
 
 export const imageWrapper: Variants = {
   initial: {
-    x: 1000,
+    y: 1000,
   },
   animate: {
-    x: 0,
+    y: 0,
     transition: {
       delay: 3.6,
       duration: 0.8,

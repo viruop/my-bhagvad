@@ -141,7 +141,7 @@ export default function Second() {
               </motion.div>
           </div>
               {translation?
-              <div className="flex justify-center flex-col lg:items-start drop-shadow-2xl bg-[#F7E9A1] w-auto  h-auto pr-5 pl-4 pt-5 pb-5 ml-8 mb-8 mt-4 -mr-2 rounded-lg md:m-8  ">
+              <div className="flex justify-center flex-col lg:items-start drop-shadow-2xl bg-[#F7E9A1] w-auto  h-auto pr-5 pl-4 pt-5 pb-5 ml-8 mb-8 mt-4 -mr-2 rounded-lg md:m-8 hover:scale-102 ">
                 {slug ? <h1 className="underline underline-offset-4 mb-2 "> {slug} </h1> : ""}
                 {api ? <h2 > {api} </h2> : ""}
                 {translation ? <p className="flex justify-start  text-left mt-2"> English translation <br /> {translation} </p>: ""}
