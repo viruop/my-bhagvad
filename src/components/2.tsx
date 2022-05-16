@@ -98,7 +98,7 @@ export default function Second() {
                      }}
                      onClick={handleClick}
 
-                    className="inline-flex text-white bg-[#266867] border-0 py-2 px-6 focus:outline-none hover:bg-[#266867] rounded text-lg w-auto" >
+                    className="inline-flex text-white bg-[#266867] border-0 py-2 px-6 focus:outline-none hover:bg-[#266867] rounded text-lg w-auto cursor-pointer" >
                         <option value="Please Select Chapter">Choose Chapter</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
