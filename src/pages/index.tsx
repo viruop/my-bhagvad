@@ -1,6 +1,5 @@
 import Second from "@components/2";
 import Header from "@components/Header";
-import Footer from "@components/Footer";
 import Leaf from "@components/Leaf";
 import TextContainer from "@components/TextContainer";
 import { motion } from "framer-motion";
@@ -29,7 +28,6 @@ export default function Home() {
         </motion.div> */}
       </main>
       <Second />
-      <Footer />
     </div>
   );
 }
