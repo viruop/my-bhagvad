@@ -75,13 +75,11 @@ export default function Second() {
           const getResult2 = await result.json();
           
          
-        console.log(getResult2)
+        // console.log(getResult2)
         setApi(getResult2.text)
         setSlug(getResult2.slug)
         getResult2.translations ? setTranslation(getResult2.translations[0].description) : '';
-        getResult2.translations ? setHindi(getResult2.translations[6].description) : '';
-        
-        
+        getResult2.translations ? setHindi(getResult2.translations[6].description) : ''; 
         }
       }, [chapter,verse])
 
@@ -151,9 +149,9 @@ export default function Second() {
               <div className="flex justify-center items-center flex-col lg:items-center drop-shadow-2xl bg-[#f8d732] w-auto h-auto pr-5 pl-4 pt-5 pb-5 ml-8 mb-8 mt-4 -mr-2 rounded-lg md:m-8 hover:bg-[#ffd500] transition duration-500 hover:scale-105">
                 {slug ? <h1 className="underline underline-offset-4 mb-4 text-xl "> {slug} </h1> : ""}
                 {api ? <div className=" mb-4 text-xl"> <h2 > {api} </h2></div> : ""}
-                <div className="flex flex-col items-center justify-center lg:items-start text">
+                <div className="flex flex-col items-center justify-center lg:items-start">
                 {translation ?  <p className=" mt-2 mb-4 text-lg"> English Translation <span className=" text-base"> <br /> {translation}</span> </p>: ""}
-                {hindi ? <p className=" pr-17 mt-2  text-lg"> Hindi Translation <span className=" text-base"> <br /> {hindi}</span> </p>: ""}</div>    
+                {hindi ? <p className="  mt-2  text-lg"> Hindi Translation <span className=" text-base"> <br /> {hindi}</span> </p>: ""}</div>    
               </div>  :""
               }
               <ReactTooltip 
