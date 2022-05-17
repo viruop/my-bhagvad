@@ -129,8 +129,8 @@ export default function Second() {
                     }}
                     disabled={isDisabled}
                     
-                    type="text" placeholder="Verse" className='cursor-pointer h-15 w-56 px-6 text-2xl text-white bg-[#f8bc24] border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-[#266867] placeholder-gray-300 placeholder-opacity-0 transition duration-200' />
-                    {/* <span className='text-xl text-white text-opacity-80 bg-[#f8bc24] absolute left-5 top-1.5 px-1 transition duration-200 input-text'>Verse</span> */}
+                    type="submit" placeholder="Verse" className='cursor-pointer h-15 w-56 px-6 text-2xl text-white bg-[#f8bc24] border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-[#266867] placeholder-gray-300 placeholder-opacity-0 transition duration-200' />
+                    <span className='text-xl text-white text-opacity-80 bg-[#f8bc24] absolute left-5 top-1.5 px-1 transition duration-200 input-text'>Verse</span>
                   </label>
                 </div>
               </div>
