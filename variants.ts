@@ -34,7 +34,7 @@ export const krishnaWrapper: Variants = {
   animate: {
     y: 0,
     transition: {
-      delay: 2.6,
+      delay: 3,
       duration: 0.8,
       type: "spring",
     },
@@ -95,7 +95,7 @@ export const leavesContainer: Variants = {
 
 export const imageWrapper: Variants = {
   initial: {
-    y: 1000,
+    y: 0,
   },
   animate: {
     y: 0,
