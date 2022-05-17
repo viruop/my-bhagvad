@@ -24,22 +24,22 @@ export default function Second() {
 // doesn't work :(
     // const [isloading, setIsloading] = useState(true)
 // to disable input feild before selecting chapter
-    const [isDisabled, setIsDisabled] = useState(true);
+    // const [isDisabled, setIsDisabled] = useState(true);
     
  
     // to disable input 
 
-    const handleClick = () => {
-      if (chapter == "Please Select Chapter") {
-        setIsDisabled(true)
-    }
-    else {
-      setIsDisabled(false)
-    }
+    // const handleClick = () => {
+    //   if (chapter == "Please Select Chapter") {
+    //     setIsDisabled(true)
+    // }
+    // else {
+    //   setIsDisabled(false)
+    // }
       // chapter != "Please Select Chapter" && setIsDisabled(false)
       // chapter == "Please Select Chapter"? isDisabled :setIsDisabled(false)
       // chapter == "Please Select Chapter" && setIsDisabled(true)
-    };
+    // };
    
 // shows how many verse present in the chapter 
     useEffect(() => {
@@ -101,7 +101,7 @@ export default function Second() {
                      onChange={(event) => {
                          setChapter(event.target.value)
                      }}
-                     onClick={handleClick}
+                    //  onClick={handleClick}
                      
                     className="inline-flex text-white bg-[#266867] border-0 py-2 px-6 focus:outline-none hover:bg-[#266867] rounded text-lg w-auto cursor-pointer" >
                         <option value="Please Select Chapter">Choose Chapter</option>
@@ -132,7 +132,7 @@ export default function Second() {
                     onChange={(event) => {
                         setVerse(event.target.value)
                     }}
-                    disabled={isDisabled}
+                    // disabled={isDisabled}
                     type="text" placeholder="Verse" className=' h-15 w-56 px-6 text-2xl text-white bg-[#f8bc24] border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-[#266867] placeholder-gray-300 placeholder-opacity-0 transition duration-200' />
                     <span className='text-xl text-white text-opacity-80 bg-[#f8bc24] absolute left-5 top-1.5 px-1 transition duration-200 input-text'>Verse</span>
                   </label>

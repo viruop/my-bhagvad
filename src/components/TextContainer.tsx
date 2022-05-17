@@ -23,7 +23,7 @@ const TextContainer = () => {
       <div className="textContainer-bottom ">
         <motion.button variants={fadeIn()}>Befriend your mind</motion.button>
         <motion.p variants={fadeIn()}>
-          Be the change <span>  you </span> <br />wish to see! 
+          Be the change <span> you </span> <br />wish to see! 
         </motion.p>
       </div>
     </motion.div>

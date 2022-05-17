@@ -100,7 +100,7 @@ export const imageWrapper: Variants = {
   animate: {
     y: 0,
     transition: {
-      delay: 3.6,
+      delay: 3.4,
       duration: 0.8,
       type: "spring",
     },
