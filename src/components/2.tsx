@@ -148,17 +148,18 @@ export default function Second() {
               </motion.div>
           </div>
               {translation?
-              <div className="flex justify-center items-center flex-col lg:items-start drop-shadow-2xl bg-[#f7e06f] w-auto  h-auto pr-5 pl-4 pt-5 pb-5 ml-8 mb-8 mt-4 -mr-2 rounded-lg md:m-8 ">
-                {slug ? <h1 className="underline underline-offset-4 mb-2 "> {slug} </h1> : ""}
-                {api ? <h2 > {api} </h2> : ""}
-                {translation ? <p className="flex justify-start  text-left mt-2"> English translation <br /> {translation} </p>: ""}
-                {hindi ? <p className="flex justify-start text-left  pr-17 mt-2"> Hindi translation <br /> {hindi} </p>: ""}        
+              <div className="flex justify-center items-center flex-col lg:items-center drop-shadow-2xl bg-[#f8d732] w-auto h-auto pr-5 pl-4 pt-5 pb-5 ml-8 mb-8 mt-4 -mr-2 rounded-lg md:m-8 hover:bg-[#ffd500] transition duration-500 hover:scale-105">
+                {slug ? <h1 className="underline underline-offset-4 mb-4 text-xl "> {slug} </h1> : ""}
+                {api ? <div className=" mb-4 text-xl"> <h2 > {api} </h2></div> : ""}
+                <div className="flex flex-col items-center justify-center lg:items-start text">
+                {translation ?  <p className=" mt-2 mb-4 text-lg"> English Translation <span className=" text-base"> <br /> {translation}</span> </p>: ""}
+                {hindi ? <p className=" pr-17 mt-2  text-lg"> Hindi Translation <span className=" text-base"> <br /> {hindi}</span> </p>: ""}</div>    
               </div>  :""
               }
               <ReactTooltip 
               id='custom-color' className='custom-color' place='top' border
               textColor='#FDFCFB' backgroundColor='#266867' borderColor='darkgreen' arrowColor='#f8bc24'
-              > <strong> मैं तो बस निमित्त मात्र हूँ</strong></ReactTooltip>
+              > <strong> मैं तो बस निमित्त मात्र हूँ 🙏</strong></ReactTooltip>
                 <div className="flex flex-col items-center justify-center"  >
                   <img  className="inline-block h-40 w-40 mb-3 ml-2 rounded-full ring-2 ring-offset-base-100 ring-offset-2 ring-white" src="/images/me.jpg" data-for='custom-color' data-tip='That is one weird arrow (and a border)!' />
                 </div>
