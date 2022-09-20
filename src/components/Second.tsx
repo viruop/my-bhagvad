@@ -34,6 +34,7 @@ export default function Second() {
       });
       const getResult = await result.json();
       setData(getResult);
+      console.log(getResult);
     }
   }, [chapter]);
 

@@ -3,7 +3,12 @@ import { fadeIn } from "variants";
 
 const Header = () => {
   return (
-    <motion.nav variants={fadeIn("down")} initial="initial" animate="animate" className="header">
+    <motion.nav
+      variants={fadeIn("down")}
+      initial="initial"
+      animate="animate"
+      className="header"
+    >
       <span className="header-logo">&apos; SONG OF GOD &apos;</span>
     </motion.nav>
   );

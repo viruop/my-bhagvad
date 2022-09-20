@@ -7,13 +7,12 @@
 #266867 green 
 */
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 input[type="text"]:focus ~ .input-text,
-input[type="text"]:not(:placeholder-shown) ~ .input-text{
+input[type="text"]:not(:placeholder-shown) ~ .input-text {
   @apply text-[#266867] transform -translate-y-5 -translate-x-2 scale-75;
 }
 
@@ -31,7 +30,6 @@ input[type="text"]:not(:placeholder-shown) ~ .input-text{
   .header-logo {
     @apply font-black md:text-2xl;
   }
-  
 
   main {
     @apply relative h-[90vh];
@@ -49,7 +47,7 @@ input[type="text"]:not(:placeholder-shown) ~ .input-text{
     @apply -mb-5 grid flex-1 place-items-center;
   }
   .textContainer-middle > span {
-    @apply text-5xl font-black tracking-wider md:text-8xl -mt-8 ;
+    @apply text-5xl font-black tracking-wider md:text-8xl -mt-8;
   }
   .textContainer-bottom {
     @apply px-2 pt-0 flex items-center justify-between;
@@ -72,10 +70,10 @@ input[type="text"]:not(:placeholder-shown) ~ .input-text{
     @apply h-[600px] w-[240px] md:h-[550px] md:w-[500px] object-contain;
   }
   /* image */
-  .imageWrapper{
-    @apply w-full lg:max-w-lg lg:w-full md:w-1/2 ;
+  .imageWrapper {
+    @apply w-full lg:max-w-lg lg:w-full md:w-1/2;
   }
-  .image{
+  .image {
     @apply ml-4 mb-2  mt-4 -mr-2 object-cover object-center rounded md:pr-8;
   }
   /* leaf & co. */
