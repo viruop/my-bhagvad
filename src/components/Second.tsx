@@ -18,6 +18,8 @@ export default function Second() {
   const [translation, setTranslation] = useState("");
   // to get hindi translation
   const [hindi, setHindi] = useState("");
+// verse options
+const [ options , setOptions ] = useState([]);
 
   // shows how many verse present in the chapter
   useEffect(() => {
@@ -34,8 +36,16 @@ export default function Second() {
       });
       const getResult = await result.json();
       setData(getResult);
-      console.log(getResult);
+      console.log(getResult.length);
+      let optionstag = []
+      for (let i =0 ; i< getResult.length ; i++){
+        let option = <option key={i} value={i+1}>{i+1}</option>
+        optionstag.push(option)
+
+      }
+      setOptions(optionstag)
     }
+
   }, [chapter]);
 
   useEffect(() => {
@@ -114,7 +124,17 @@ export default function Second() {
             </div>
             <div className=" ml-2 h-15 flex justify-center items-center bg-[#f8bc24]">
               <label className="relative">
-                <input
+                {
+                  options.length > 0 ? <select value={verse}
+                  onChange={(event) => {
+                    setVerse(event.target.value);
+                  }} className=" h-15 w-56 px-6 text-2xl text-white bg-[#f8bc24] border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-[#266867] placeholder-gray-300 placeholder-opacity-0 transition duration-200">
+                  <option selected >Select Verse </option>
+                  {options}
+                </select> : ""
+                }
+                
+                {/* <input
                   value={verse}
                   onChange={(event) => {
                     setVerse(event.target.value);
@@ -123,9 +143,7 @@ export default function Second() {
                   placeholder="Verse"
                   className=" h-15 w-56 px-6 text-2xl text-white bg-[#f8bc24] border-white border-2 rounded-lg border-opacity-50 outline-none focus:border-[#266867] placeholder-gray-300 placeholder-opacity-0 transition duration-200"
                 />
-                <span className="text-xl text-white text-opacity-80 bg-[#f8bc24] absolute left-5 top-1.5 px-1 transition duration-200 input-text">
-                  Verse
-                </span>
+                 */}
               </label>
             </div>
           </div>
