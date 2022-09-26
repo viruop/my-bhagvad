@@ -1,8 +1,8 @@
-import Second from "@components/Second";
+import Second from "@components/Main";
 import Header from "@components/Header";
 import TextContainer from "@components/TextContainer";
 import { motion } from "framer-motion";
-import { krishna, krishnaWrapper, leavesContainer } from "variants";
+import { krishna, krishnaWrapper } from "variants";
 
 export default function Home() {
   return (
