@@ -94,7 +94,7 @@ export default function Second() {
             Lord Krishna. It is the dialogues between Pandav Prince Arjuna and
             Lord Krishna during the Kurukshetra war also known as Mahabharata.
           </p>
-          <div className="p-8 m-1">
+          <div className="p-8 md:p-0 m-1">
             <div className="flex justify-center">
               <div className="">
                 <select
